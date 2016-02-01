@@ -1,0 +1,7 @@
+hostname {{hostname}}
+password {{password}}
+
+router ospf
+    {% for net in networks %}network {{net}} area 0
+    {% endfor %}
+    log file /var/log/quagga/ospfd.log 

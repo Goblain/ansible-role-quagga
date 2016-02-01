@@ -1,0 +1,5 @@
+- apt: name=quagga
+- template: src=daemons.j2 dest=/etc/quagga/daemons
+- template: src=zebra.conf.j2 dest=/etc/quagga/zebra.conf
+- template: src=ospfd.conf.j2 dest=/etc/quagga/ospfd.conf
+- service: name=quagga state=running enabled=true
